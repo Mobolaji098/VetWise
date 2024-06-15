@@ -36,7 +36,7 @@ export default function Realcare() {
 
     <div className="flex flex-col items-center border-r border-gray-500 pr-8" >
     <HandHeart size={40} className="text-pink-600" />
-    <p className="font-bold text-white text-3xl mt-5"> 1000's</p>
+    <p className="font-bold text-white text-3xl mt-5"> 1000s</p>
     <p className=" text-white  "> of ailments treated</p>
     </div>
 

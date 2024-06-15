@@ -30,7 +30,7 @@ export default function Alongsidevets() {
               Alex & Charles
             </p>
             <p className="text-black font-light text-start">
-              So much better than Googling, guessing, and stressing! I'd never
+              So much better than Googling, guessing, and stressing! I d never
               heard of what Dr. Harris diagnosed and it makes compelling sense
               within current circumstances. We appreciated her flexibility in
               taking what was a very last minute, evening
@@ -54,7 +54,7 @@ export default function Alongsidevets() {
               Alex & Charles
             </p>
             <p className="text-black font-light text-start">
-              So much better than Googling, guessing, and stressing! I'd never
+              So much better than Googling, guessing, and stressing! Id never
               heard of what Dr. Harris diagnosed and it makes compelling sense
               within current circumstances. We appreciated her flexibility in
               taking what was a very last minute, evening
@@ -78,7 +78,7 @@ export default function Alongsidevets() {
               Alex & Charles
             </p>
             <p className="text-black font-light text-start">
-              So much better than Googling, guessing, and stressing! I'd never
+              So much better than Googling, guessing, and stressing! Id never
               heard of what Dr. Harris diagnosed and it makes compelling sense
               within current circumstances. We appreciated her flexibility in
               taking what was a very last minute, evening

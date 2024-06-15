@@ -64,7 +64,7 @@ export default function Categories() {
       <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 pt-20">
         {data?.map((item: IProduct) => (
           <ProductCard
-            // key = {item.name}
+            key = {item.name}
             id={item.id}
             name={item.name}
             image={item.image}
