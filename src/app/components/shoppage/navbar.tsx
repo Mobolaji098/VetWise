@@ -5,8 +5,13 @@ import SearchBar from "../ui/ProduuctSearchBar";
 import { ArrowDown, ChevronDown, ShoppingCart } from "lucide-react";
 import { useAppSelector } from "@/redux/hooks";
 
-export default function Navbar({ setShowCart }: any) {
-  const cartCount = useAppSelector((state) => state.cartReducer.length);
+export default function Navbar({ setShowCart,showCart }: any) {
+  const cartproduct = useAppSelector((state) => state.cartReducer);
+  const cartCount = () => {
+    let total = 0;    
+    cartproduct.forEach((item) => (total = total + item.quantity));    
+    return total;
+  };
   
   return (
     <div className="bg-slate-800 fixed top-0 w-full z-50  ">
@@ -34,12 +39,11 @@ export default function Navbar({ setShowCart }: any) {
           </ButtonNoOutline>
 
           <ButtonColored
-            as={Link}
-            href="/sign-up"
-            className="text-white relative text-lg bg-pink-600 rounded-3xl py-2 px-3 "
+            className="text-white relative text-lg bg-pink-600 rounded-3xl py-2 px-3 cursor-pointer"
+            onClick={()=>setShowCart(!showCart)}
           >
             <div className="absolute top-0 left-[10px] h-6 w-6 bg-slate-800 p-3 flex items-center justify-center text-white rounded-full">
-              {cartCount}
+              {cartCount()}
             </div>
             <ShoppingCart size={24} className="ml-3" />
             <p className="px-3 text-sm">Cart</p>
