@@ -7,6 +7,7 @@ import { useAppSelector } from "@/redux/hooks";
 
 export default function Navbar({ setShowCart }: any) {
   const cartCount = useAppSelector((state) => state.cartReducer.length);
+  
   return (
     <div className="bg-slate-800 fixed top-0 w-full z-50  ">
       <div className="flex flex-row h-16  m-auto   w-full lg:max-w-[1400px] items-center  max-w-[750px]">

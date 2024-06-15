@@ -1,14 +1,14 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface IProductCart {
-  id: number;
-  image: string;
-  name: string;
-  description: string;
-  categories: string[];
-  price: number;
-  quantity: number;
-  precription: boolean;
+    id:number;
+    image: string;
+    name: string;
+    rating: string;
+    category:string;
+    price: number;
+    quantity:number;
+
 }
 
 const initialState: Array<IProductCart> = [];

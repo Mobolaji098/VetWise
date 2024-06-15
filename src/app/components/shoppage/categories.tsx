@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Products } from "@/utils/data";
 import ProductCard from "./components/productCard";
 
 interface IProduct {
@@ -20,9 +19,25 @@ export default function Categories() {
 
   const [data, setData] = useState([]);
   const [selected, setSelected] = useState(0);
+  const [Products, setProducts] = useState([])
 
   useEffect(() => {
-    setData(products(Products).slice(0, 15));
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch("/api/products");
+        if (!response.ok) {
+          throw new Error("Failed to fetch products");
+        }
+        const result = await response.json();        
+        setProducts(products(result).slice(0, 15));
+        setData(products(result).slice(0, 15))
+        console.log(result);
+        
+      } catch (error:any) {
+        console.error(error.message);
+      }
+    };
+    fetchProducts();
   }, []);
 
   const tabs = ["all", "dog", "exotic", "cat"];
@@ -34,11 +49,11 @@ export default function Categories() {
     if (category == "all") {
       setData(products(Products).slice(0, 15));
     } else {
-      const filterData = Products.filter((item) =>
+      const filterData = Products.filter((item:IProduct) =>
         item.category.includes(category)
       );
       setData(products(filterData).slice(0, 15));
-    }
+    }    
   };
 
   return (
@@ -64,7 +79,7 @@ export default function Categories() {
       <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 pt-20">
         {data?.map((item: IProduct) => (
           <ProductCard
-            key = {item.name}
+            key={item.name}
             id={item.id}
             name={item.name}
             image={item.image}
