@@ -5,7 +5,7 @@ import bcryptjs from "bcrypt";
 // import { env } from '@/env';
 
 // Calls the connect function to establish a connection to the database.
-
+connect(process.env.MONGO_URI)
 export async function POST(request: NextRequest) {
   // Defines an asynchronous POST request handler.
   try {
@@ -23,7 +23,7 @@ export async function POST(request: NextRequest) {
     const user = await User.findOne({ email });
 
     //If yes, returns a 400 response.
-    if (user) {
+    if (user) {      
       return NextResponse.json(
         { message: "User already exists", success: false },
         { status: 400 }
