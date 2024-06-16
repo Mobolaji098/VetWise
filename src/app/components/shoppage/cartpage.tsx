@@ -11,7 +11,7 @@ interface IProduct {
   quantity:number;
 }
 
-export default function ({ setShowCart, showCart }: any) {
+export default function Cartpage ({ setShowCart, showCart }: any) {
   const products = useAppSelector((state) => state.cartReducer);
   const isEmpty = products.length == 0;
 

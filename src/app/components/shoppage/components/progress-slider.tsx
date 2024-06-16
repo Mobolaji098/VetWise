@@ -28,7 +28,7 @@ export default function ProgressSlider({ items }: { items: Item[] }) {
     return () => {
       cancelAnimationFrame(frame.current)
     }
-  }, [active])
+  }, [])
 
   const animate = (now: number) => {
     let timeFraction = (now - firstFrameTime.current) / duration
